@@ -1,0 +1,50 @@
+header {
+  z-index: 1000;
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  position: fixed;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.projectTitle {
+  color: #86BC25;
+  display: inline-block;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.bar {
+  color: #97999B;
+  margin-left: 10px;
+}
+.logo{
+  height: 30px;
+}
+.deloitte-logo {
+  font-weight: bold;
+  font-size: 32px;
+}
+.green-dot {
+  border-radius: 50%;
+  background: #86BC25;
+  padding: 0px 4px;
+  font-size: 6px;
+}
+.padding-15-7 {
+  padding: 15px 15px 7px 15px;
+}
+.bellIcon {
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bellIcon .glyphicon-bell {
+  color: #000;
+  top: 5px;
+  left: 4px;
+}

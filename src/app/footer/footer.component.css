@@ -1,0 +1,15 @@
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 3000;
+  text-align: left;
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+
+.footertext {
+  padding: 10px 15px;
+}

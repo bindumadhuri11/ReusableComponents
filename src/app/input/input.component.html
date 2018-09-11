@@ -1,0 +1,235 @@
+<div class="container-fluid">
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Input</span>
+      <span>
+        InputText is an extension to standard input element with theming.
+      </span>
+    </div>
+  </div>
+  <div class="content-section implementation">
+    <div class="row header-font">
+      Input-text
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+        <h3 class="first">Basic</h3>
+        <input id="input" type="text" size="30" pInputText [(ngModel)]="text">
+        <span id="text">{{text}}</span>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+        <h3>Float Label</h3>
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" pInputText>
+          <label for="float-input">Username</label>
+        </span>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+        <h3>Disabled</h3>
+        <input id="disabled-input" type="text" size="30" pInputText [disabled]="disabled" />
+        <button id="disabled-btn" type="button" (click)="toggleDisabled()" pButton label="Toggle"></button>
+      </div>
+    </div>
+    <hr />
+
+
+    <div class="row header-font">
+      Auto-Complete
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+        <h3 class="first">Basic</h3>
+        <p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" field="name" [size]="30"
+                        placeholder="Countries" [minLength]="1"></p-autoComplete>
+        <div>Country: {{country ? country.name||country : 'none'}}</div>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+        <h3>Advanced</h3>
+        <p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
+                        [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true">
+          <ng-template let-brand pTemplate="item">
+            <div class="ui-helper-clearfix">
+              <div>{{brand}}</div>
+            </div>
+          </ng-template>
+        </p-autoComplete>
+        <div>Brand: {{brand||'none'}}</div>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+        <h3>Multiple</h3>
+        <span class="ui-fluid">
+          <p-autoComplete [(ngModel)]="countries" [suggestions]="filteredCountriesMultiple" (completeMethod)="filterCountryMultiple($event)" styleClass="wid100"
+                          [minLength]="1" placeholder="Countries" field="name" [multiple]="true">
+          </p-autoComplete>
+        </span>
+        <div>
+          <ul>
+            <li *ngFor="let c of countries">{{c.name}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+
+    <div class="row header-font">
+      Text-area
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+        <h3 class="first">Default</h3>
+        <textarea rows="5" cols="30" pInputTextarea></textarea>
+      </div>
+    </div>
+    <hr />
+
+
+    <div class="content-section documentation">
+      <p-tabView effect="fade">
+        <p-tabPanel header="input.html">
+          <pre>
+          <code class="language-markup" pCode ngNonBindable>
+<h3>Input Text</h3>
+&lt;h3 class="first"&gt;Basic&lt;/h3&gt;
+&lt;input id="input" type="text" size="30" pInputText [(ngModel)]="text"&gt; 
+&lt;span id="text"&gt;&#123;&#123;text&#125;&#125;&lt;/span&gt;
+
+&lt;h3&gt;Float Label&lt;/h3&gt;
+&lt;span class="ui-float-label"&gt;
+    &lt;input id="float-input" type="text" size="30" pInputText&gt; 
+    &lt;label for="float-input"&gt;Username&lt;/label&gt;
+&lt;/span&gt;
+
+&lt;h3&gt;Disabled&lt;/h3&gt;
+&lt;input id="disabled-input" type="text" size="30" pInputText [disabled]="disabled" /&gt;
+
+&lt;button id="disabled-btn" type="button" (click)="toggleDisabled()" pButton label="Toggle"&gt;&lt;/button&gt;
+
+
+<h3>Auto-complete</h3>
+&lt;h3 class="first"&gt;Basic&lt;/h3&gt;
+&lt;p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" field="name" [size]="30"
+    placeholder="Countries" [minLength]="1"&gt;&lt;/p-autoComplete&gt;
+&lt;span style="margin-left:10px"&gt;Country: {{country ? country.name||country : 'none'}}&lt;/span&gt;
+
+&lt;h3&gt;Advanced&lt;/h3&gt;
+&lt;p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
+    [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true"&gt;
+    &lt;ng-template let-brand pTemplate="item"&gt;
+        &lt;div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5"&gt;
+            &lt;img src="assets/showcase/images/demo/car/{{brand}}.png" style="width:32px;display:inline-block;margin:5px 0 2px 5px"/&gt;
+            &lt;div style="font-size:18px;float:right;margin:10px 10px 0 0"&gt;{{brand}}&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/ng-template&gt;
+&lt;/p-autoComplete&gt;
+&lt;span style="margin-left:50px"&gt;Brand: {{brand||'none'}}&lt;/span&gt;
+
+&lt;h3&gt;Multiple&lt;/h3&gt;
+&lt;span class="ui-fluid"&gt;
+    &lt;p-autoComplete [(ngModel)]="countries" [suggestions]="filteredCountriesMultiple" (completeMethod)="filterCountryMultiple($event)" styleClass="wid100"
+        [minLength]="1" placeholder="Countries" field="name" [multiple]="true"&gt;
+    &lt;/p-autoComplete&gt;
+&lt;/span&gt;
+&lt;ul&gt;
+    &lt;li *ngFor="let c of countries"&gt;&#123;&#123;c.name&#125;&#125;&lt;/li&gt;
+&lt;/ul&gt;
+
+<h3>Text Area</h3>
+&lt;h3 class="first"&gt;Default&lt;/h3&gt;
+&lt;textarea rows="5" cols="30" pInputTextarea&gt;&lt;/textarea&gt;
+
+          </code>
+        </pre>
+        </p-tabPanel>
+
+        <p-tabPanel header="input.ts">
+<pre>
+          <code class="language-typescript" pCode ngNonBindable>
+<h3>Input Text</h3>
+    export class InputTextDemo &#123;
+
+      text: string;
+      disabled: boolean = true;
+
+      toggleDisabled() &#123;
+        this.disabled = !this.disabled;
+      &#125;
+    &#125;
+
+
+<h3>Auto-complete</h3>
+export class AutoCompleteDemo &#123;
+
+    country: any;
+
+    countries: any[];
+
+    filteredCountriesSingle: any[];
+
+    filteredCountriesMultiple: any[];
+
+    brands: string[] = ['Audi','BMW','Fiat','Ford','Honda','Jaguar','Mercedes','Renault','Volvo','VW'];
+
+    filteredBrands: any[];
+
+    brand: string;
+
+    constructor(private countryService: CountryService) &#123; &#125;
+
+    filterCountrySingle(event) &#123;
+        let query = event.query;
+        this.countryService.getCountries().then(countries => &#123;
+            this.filteredCountriesSingle = this.filterCountry(query, countries);
+        &#125;);
+    &#125;
+
+    filterCountryMultiple(event) &#123;
+        let query = event.query;
+        this.countryService.getCountries().then(countries => &#123;
+            this.filteredCountriesMultiple = this.filterCountry(query, countries);
+        &#125;);
+    &#125;
+
+    filterCountry(query, countries: any[]):any[] &#123;
+        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+        let filtered : any[] = [];
+        for(let i = 0; i < countries.length; i++) &#123;
+            let country = countries[i];
+            if(country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) &#123;
+                filtered.push(country);
+            &#125;
+        &#125;
+        return filtered;
+    &#125;
+
+    filterBrands(event) &#123;
+        this.filteredBrands = [];
+        for(let i = 0; i < this.brands.length; i++) &#123;
+            let brand = this.brands[i];
+            if(brand.toLowerCase().indexOf(event.query.toLowerCase()) == 0) &#123;
+                this.filteredBrands.push(brand);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+<h4 style="font-weight: bold;">Service.ts</h4>
+@Injectable()
+export class CountryService &#123;
+
+    constructor(private http: Http) &#123;&#125;
+
+    getCountries() &#123;
+        return this.http.get('showcase/resources/data/countries.json')
+                    .toPromise()
+                    .then(res => &lt;any[]&gt; res.json().data)
+                    .then(data => &#123; return data; &#125;);
+    &#125;
+&#125;
+
+
+              </code>
+</pre>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>

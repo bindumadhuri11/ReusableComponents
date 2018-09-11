@@ -1,0 +1,21 @@
+<div class="container-fluid margin-top-50">
+  <div class="layout-sidebar">
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Input'" (click)="selectedModule('/Input')" [routerLink]='["Input"]'>Input</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Radio'" (click)="selectedModule('/Radio')" [routerLink]='["Radio"]'>Radio Button</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Checkbox'" (click)="selectedModule('/Checkbox')" [routerLink]='["Checkbox"]'>Checkbox</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Dropdown'" (click)="selectedModule('/Dropdown')" [routerLink]='["Dropdown"]'>Dropdown</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Calendar'" (click)="selectedModule('/Calendar')" [routerLink]='["Calendar"]'>Calendar</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Button'" (click)="selectedModule('/Button')" [routerLink]='["Button"]'>Button</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/OrderList'" (click)="selectedModule('/OrderList')" [routerLink]='["OrderList"]'>OrderList</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Paginator'" (click)="selectedModule('/Paginator')" [routerLink]='["Paginator"]'>Paginator</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Tree'" (click)="selectedModule('/Tree')" [routerLink]='["Tree"]'>Tree</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/PickList'" (click)="selectedModule('/PickList')" [routerLink]='["PickList"]'>Pick-list</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Table'" (click)="selectedModule('/Table')" [routerLink]='["Table"]'>Table</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Accordion'" (click)="selectedModule('/Accordion')" [routerLink]='["Accordion"]'>Accordion</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/TabView'" (click)="selectedModule('/TabView')" [routerLink]='["TabView"]'>TabView</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Dialog'" (click)="selectedModule('/Dialog')" [routerLink]='["Dialog"]'>Popup and Confirm Dialog Box</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/SideBar'" (click)="selectedModule('/SideBar')" [routerLink]='["SideBar"]'>Overlay and SideBar</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Tooltip'" (click)="selectedModule('/Tooltip')" [routerLink]='["Tooltip"]'>Tooltip</div>
+    <div class="sidebar-text" [class.active-sidebar]="selectedMenu == '/Messages'" (click)="selectedModule('/Messages')" [routerLink]='["Messages"]'>Messages</div>
+  </div>
+</div>

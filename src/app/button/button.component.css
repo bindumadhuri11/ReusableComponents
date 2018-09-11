@@ -1,0 +1,36 @@
+/*------ Brand Compliant Red Color for button*/
+.button-danger {
+  background-color: #d9534f !important;
+  border-color: #d9534f !important;
+  color: #fff;
+}
+
+.button-warning {
+  background-color: #ED8B00 !important;
+  border-color: #ED8B00 !important;
+  color: #fff;
+}
+
+.button-success {
+  background-color: #43B02A !important;
+  border-color: #43B02A !important;
+  color: #fff;
+}
+
+.button-blue {
+  border: 1px solid #0076A8 !important;
+  color: #FFFFFF;
+  background: #0076A8 !important;
+}
+
+.ui-button {
+  border: 1px solid #0076A8;
+  color: #FFFFFF;
+  background: #0076A8;
+}
+
+.button-white {
+  background-color: #fff !important;
+  border-color: #ccc !important;
+  color: #373a3c !important;
+}

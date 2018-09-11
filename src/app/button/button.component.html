@@ -1,0 +1,138 @@
+<div class="container-fluid">
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Button</span>
+      <span>
+        Button is an extension to standard input element with icons and theming.
+      </span>
+    </div>
+  </div>
+  <div class="content-section implementation">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="row header-font">
+          Button
+        </div>
+        <h3>Button Component</h3>
+        <p-button (onClick)="count()" label="Click"></p-button>
+        <p-button (onClick)="count()" icon="fa fa-fw fa-check" label="Click"></p-button>
+        <p-button (onClick)="count()" icon="fa fa-fw fa-check" iconPos="right" label="Click"></p-button>
+        <p-button (onClick)="count()" icon="fa fa-fw fa-close"></p-button>
+        <p-button (onClick)="count()" icon="fa fa-fw fa-check" [disabled]="true" label="Disabled"></p-button>
+
+        <h3>Button Directive</h3>
+        <button pButton type="button" (click)="count()" label="Click"></button>
+        <button pButton type="button" (click)="count()" icon="fa fa-fw fa-check" label="Click"></button>
+        <button pButton type="button" (click)="count()" icon="fa fa-fw fa-check" iconPos="right" label="Click"></button>
+        <button pButton type="button" (click)="count()" icon="fa fa-fw fa-close"></button>
+        <button pButton type="button" (click)="count()" icon="fa fa-fw fa-check" [disabled]="true" label="Disabled"></button>
+
+        <h3>Severity Buttons</h3>
+        <button pButton type="button" (click)="count()" label="Primary"></button>
+        <button pButton type="button" (click)="count()" label="Secondary" class="button-white"></button>
+        <button pButton type="button" (click)="count()" label="Success" class="button-success"></button>
+        <button pButton type="button" (click)="count()" label="Warning" class="button-warning"></button>
+        <button pButton type="button" (click)="count()" label="Danger" class="button-danger"></button>
+        <br /><br />
+        Number of clicks: {{clicks}}
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="row header-font">
+          Split-Button
+        </div>
+        <h3 class="first">Basic</h3>
+        <p-splitButton label="Save" icon="fa fa-fw fa-check" (onClick)="save()" [model]="items"></p-splitButton>
+
+        <h3>Severities</h3>
+        <p-splitButton label="Save" icon="fa fa-fw fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-secondary margin-right"></p-splitButton>
+        <p-splitButton label="Save" icon="fa fa-fw fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-success margin-right"></p-splitButton>
+        <p-splitButton label="Save" icon="fa fa-fw fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-info margin-right"></p-splitButton>
+        <p-splitButton label="Save" icon="fa fa-fw fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-warning margin-right"></p-splitButton>
+        <p-splitButton label="Save" icon="fa fa-fw fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-danger margin-right"></p-splitButton>
+      </div>
+    </div>
+  </div>
+    <div class="content-section documentation">
+      <p-tabView effect="fade">
+        <p-tabPanel header="button.html">
+          <pre>
+          <code class="language-markup" pCode ngNonBindable>
+<h2>Button</h2>
+&lt;h3&gt;Button Component&lt;/h3&gt;
+&lt;p-button (onClick)="count()" label="Click"&gt;&lt;/p-button&gt;
+
+&lt;p-button (onClick)="count()" icon="fa fa-fw fa-check" label="Click"&gt;&lt;/p-button&gt;
+
+&lt;p-button (onClick)="count()" icon="fa fa-fw fa-check" iconPos="right" label="Click"&gt;&lt;/p-button&gt;
+
+&lt;p-button (onClick)="count()" icon="fa fa-fw fa-close"&gt;&lt;/p-button&gt;
+
+&lt;p-button (onClick)="count()" icon="fa fa-fw fa-check" [disabled]="true" label="Disabled"&gt;&lt;/p-button&gt;
+
+&lt;h3&gt;Button Directive&lt;/h3&gt;
+&lt;button pButton type="button" (click)="count()" label="Click"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" icon="fa-check" label="Click"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" icon="fa-check" iconPos="right" label="Click"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" icon="fa-close"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" icon="fa-check" [disabled]="true" label="Disabled"&gt;&lt;/button&gt;
+
+&lt;h3&gt;Severity Buttons&lt;/h3&gt;
+
+&lt;button pButton type="button" (click)="count()" label="Primary"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" label="Secondary" class="button-white"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" label="Success" class="button-success"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" label="Warning"  class="button-warning"&gt;&lt;/button&gt;
+
+&lt;button pButton type="button" (click)="count()" label="Danger"  class="button-danger"&gt;&lt;/button&gt;
+
+Number of clicks: {{clicks}}
+
+<h2>Split-Button</h2>
+&lt;h3 class="first"&gt;Basic&lt;/h3&gt;
+&lt;p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items"&gt;&lt;/p-splitButton&gt;
+
+&lt;h3&gt;Severities&lt;/h3&gt;
+&lt;p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-secondary"&gt;&lt;/p-splitButton&gt;
+&lt;p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-success"&gt;&lt;/p-splitButton&gt;
+&lt;p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-warning"&gt;&lt;/p-splitButton&gt;
+&lt;p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items" styleClass="ui-button-danger"&gt;&lt;/p-splitButton&gt;
+          </code>
+        </pre>
+        </p-tabPanel>
+
+        <p-tabPanel header="button.ts">
+<pre>
+          <code class="language-typescript" pCode ngNonBindable>
+export class ButtonDemo &#123;
+
+    clicks: number = 0;
+
+    count() &#123;
+        this.clicks++;
+    &#125;
+    items: any[];
+    
+    ngOnInit() &#123;
+        this.items = [
+            &#123;label: 'Update', icon: 'fa-refresh', command: () => &#123;
+            &#125;&#125;,
+            &#123;label: 'Delete', icon: 'fa-close', command: () => &#123;
+            &#125;&#125;,
+            &#123;label: 'Angular.io', icon: 'fa-link', url: 'http://angular.io'&#125;,
+            &#123;label: 'Theming', icon: 'fa-paint-brush'&#125;
+        ];
+    &#125;
+&#125;
+              </code>
+</pre>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>

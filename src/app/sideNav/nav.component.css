@@ -1,0 +1,24 @@
+.layout-sidebar {
+  position: fixed;
+  left: 0;
+  height: calc(100% - 70px);
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 300px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.3);
+    z-index: 2000;
+}
+.active-sidebar {
+  color: #86BC25 !important;
+  border-right: 5px solid #86BC25;
+  background: #000;
+}
+.sidebar-text {
+  padding: 10px 18px;
+  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: 16px;
+  color: #86BC25;
+  cursor: pointer;
+}
